@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <!-- =============================== CSS STYLESHEET ================================ -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- ================================ FONT AWESOME ================================= -->
+    <script
+      src="https://kit.fontawesome.com/96ee3b227d.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .container p {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .images-section img {
+        max-width: 250px;
+      }
+
+      image,
+      image2,
+      image3,
+      image4 {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Projects</h1>
+    <!-- =================================== HEADER ==================================== -->
+    <header class="header">
+      <a href="/index.html" class="logo">ALEJANDRO PACHECO</a>
+      <div class="rightSide">
+        <nav class="navBar">
+          <a href="/index.html" class="link">Home</a>
+          <a href="/about.html">About Me</a>
+          <a href="/projects.html">Projects</a>
+        </nav>
+        <a href="/contactme.html" class="ctaBtn">
+                Contact Me
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+      </div>
+      <div class="bars">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+      </div>
+    </header>
+    <!-- ================================== HERO PAGE ================================== -->
+    <div class="container">
+      <h1>Projects</h1>
+      <p>
+        Here you will find all the projects I have worked on, with the more
+        technical ones at the top, and the less technical ones at the bottom.
+        Click on the respective image to take you to the github repository for
+        each independent project.
+      </p>
+      <hr class="purple-line" />
+      <div class="images-section">
+        <div class="image-container">
+          <a href="https://github.com/pacheckito/MazeTraversal" target="_blank">
+            <img class="my-image" src="/images/maze.png" />
+          </a>
+          <p class="image-description">
+            Path finding algorithms for finding a path through a maze up to
+            100x100 - one using a stack and the other using a queue.
+          </p>
+        </div>
+        <div class="image-container">
+          <a href="https://github.com/pacheckito/Covid-Flights" target="_blank">
+            <img class="my-image4" src="/images/covidair.jpg" />
+          </a>
+          <p class="image-description">
+            R based project that analyzes the relationship between the number
+            (or percentage) of cancelled Delta flights and the Delta stock price
+            at the ATL airport during the COVID-19 pandemic.
+          </p>
+        </div>
+        <div class="image-container">
+          <a href="https://github.com/pacheckito/CardGame" target="_blank">
+            <img class="my-image3" src="/images/cardgame.jpg" />
+          </a>
+          <p class="image-description">
+            Simple card game implementation that uses a standard 52-card deck
+            and involves a dealer, two players, and a table with four places for
+            players to place their cards.
+          </p>
+        </div>
+        <div class="image-container">
+          <a href="https://github.com/pacheckito/TicTacToe" target="_blank">
+            <img class="my-image2" src="/images/tictactoe.png" />
+          </a>
+          <p class="image-description">
+            A TicTacToe game to be played inside the the command promt
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- ============================== DARK & LIGHT MODE ============================== -->
+    <div class="dark_light_mode">
+      <i class="fa-solid fa-sun"></i>
+      <i class="fa-solid fa-moon"></i>
+    </div>
+    <!-- ================================== JS SCRIPT ================================== -->
+    <script src="/js/app.js"></script>
+    <script>
+      const images = document.getElementsByTagName("img");
+      for (let i = 0; i < images.length; i++) {
+        images[i].addEventListener("mousedown", (e) => {
+          e.preventDefault();
+        });
+      }
+    </script>
+  </body>
+</html>

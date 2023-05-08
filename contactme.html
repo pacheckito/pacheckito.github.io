@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <!-- =============================== CSS STYLESHEET ================================ -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- ================================ FONT AWESOME ================================= -->
+    <script
+      src="https://kit.fontawesome.com/96ee3b227d.js"
+      crossorigin="anonymous"
+    ></script>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+  <style>
+    *{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+
+body{
+	height: 100vh;
+	width: 100%;
+}
+
+.contactmee{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 100px;
+}
+
+.contactmee:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: url("/images/background.JPG") no-repeat center;
+	background-size: cover;
+	filter: blur(50px);
+	z-index: -1;
+}
+.contact-box{
+	max-width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+}
+
+.left{
+	background: url("images/headshot.jpg") no-repeat center;
+	background-size: cover;
+	height: 100%;
+}
+
+.right{
+	padding: 25px 40px;
+}
+
+h2{
+	position: relative;
+	padding: 0 0 10px;
+	margin-bottom: 10px;
+}
+
+h2:after{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #8914c0;
+}
+
+.field{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+
+.field:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea{
+	min-height: 150px;
+}
+
+.btn{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: #8914c0;
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.btn:hover{
+    background-color: #543463;
+}
+
+.field:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+
+@media screen and (max-width: 880px){
+	.contact-box{
+		grid-template-columns: 1fr;
+	}
+	.left{
+		height: 200px;
+	}
+}
+  </style>
+</head>
+<body>
+  <header class="header">
+        <a href="/index.html" class="logo">ALEJANDRO PACHECO</a>
+        <div class="rightSide">
+            <nav class="navBar">
+                <a href="/index.html" class="link">Home</a>
+                <a href="/about.html">About Me</a>
+                <a href="/projects.html">Projects</a>
+            </nav>
+            <a href="/contactme.html" class="ctaBtn">
+                Contact Me
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+        </div>
+        <div class="bars">
+            <div class="bar bar-1"></div>
+            <div class="bar bar-2"></div>
+            <div class="bar bar-3"></div>
+        </div>
+    </header>
+	<div class="contactmee">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h2>Contact Me</h2>
+          <input type="text" id="name" class="field" placeholder="Your Name">
+          <input type="text" id="email" class="field" placeholder="Your Email">
+          <input type="text" id="subject" class="field" placeholder="Subject">
+          <textarea id="message" placeholder="Message" class="field"></textarea>
+				  <button class="btn">Send</button>
+			</div>
+		</div>
+	</div>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    var btn = document.querySelector('.btn');
+    btn.addEventListener('click', function() {
+      console.log('Button clicked');       // do something when the button is clicked
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var subject = document.getElementById('subject').value;
+      var message = document.getElementById('message').value;
+      var body= 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+
+          Email.send({
+        SecureToken : "d4ec0fe7-3f20-4e81-8f41-6ddf905ee39d",
+        To : 'alepacheco0827@gmail.com',
+        From : "alepacheco0827@gmail.com",
+        Subject : "Contact Message",
+        Body : body
+    }).then(function(response) {
+    if (response === 'OK') {
+      alert('Your email has been sent successfully!');
+    } else {
+      console.error('Error:', response);
+      alert('There was an error sending your email. Please try again later.');
+    }
+  });
+});
+  </script>
+</body>
+</html>
