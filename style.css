@@ -371,7 +371,7 @@ body {
   padding-bottom: 10px;
 }
 
-.my-image11, .my-image22, .my-image33, .my-image44 {
+.my-image5 .my-image11, .my-image22, .my-image33, .my-image44 {
   width: 300px;
   height: 300px;
   object-fit: cover;
@@ -388,7 +388,7 @@ body {
   text-align: center;
 }
 
-.my-image, .my-image2, .my-image3, .my-image4 {
+.my-image5, .my-image, .my-image2, .my-image3, .my-image4 {
   border: 3px solid #9b4dca;
   padding: 10px;
   text-align: center;
@@ -430,7 +430,7 @@ p {
   justify-content: space-between;
 }
 
-.my-image:hover, .my-image2:hover, .my-image3:hover, .my-image4:hover {
+.my-image5:hover, .my-image:hover, .my-image2:hover, .my-image3:hover, .my-image4:hover {
   background-color: #d1b8e9;
 }
 
