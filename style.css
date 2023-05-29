@@ -371,7 +371,7 @@ body {
   padding-bottom: 10px;
 }
 
-.my-image5 .my-image11, .my-image22, .my-image33, .my-image44 {
+.my-image11, .my-image22, .my-image33, .my-image44 {
   width: 300px;
   height: 300px;
   object-fit: cover;
